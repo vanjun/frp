@@ -11,7 +11,7 @@ RUN cd /go/src/github.com/fatedier/frp \
  && mv conf/frps.ini /opt/frp/conf/frps.ini \
  && make clean
 
-WORKDIR /
+WORKDIR /opt/frp/
 
 # EXPOSE 80 443 6000 7000 7500
 
