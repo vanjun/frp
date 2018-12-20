@@ -4,10 +4,11 @@ COPY . /go/src/github.com/fatedier/frp
 
 RUN cd /go/src/github.com/fatedier/frp \
  && make \
- && mv bin/frpc /opt/frpc \
- && mv bin/frps /opt/frps \
- && mv conf/frpc.ini /opt/frpc.ini \
- && mv conf/frps.ini /opt/frps.ini \
+ && mkdir -p /opt/frp/conf \
+ && mv bin/frpc /opt/frp/frpc \
+ && mv bin/frps /opt/frp/frps \
+ && mv conf/frpc.ini /opt/frp/conf/frpc.ini \
+ && mv conf/frps.ini /opt/frp/conf/frps.ini \
  && make clean
 
 WORKDIR /
@@ -18,4 +19,4 @@ WORKDIR /
 
 EXPOSE 7000 8090
  
-CMD ["/opt/frps","-c","frps.ini"]
+CMD ["/opt/frp/frps","-c","/opt/frp/conf/frps.ini"]
