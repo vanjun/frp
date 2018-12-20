@@ -19,4 +19,4 @@ WORKDIR /
 
 EXPOSE 7000 8090
  
-CMD ["/opt/frp/frps","-c","/opt/frp/conf/frps.ini"]
+CMD ["/opt/frp/frps","-c","conf/frps.ini"]
