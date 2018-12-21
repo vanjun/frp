@@ -12,10 +12,10 @@ RUN cd /go/src/github.com/fatedier/frp \
 
 WORKDIR /
 
-# EXPOSE 80 443 6000 7000 7500
+EXPOSE 80 443 6000 7000 7500
 
-# ENTRYPOINT ["/frps"]
+ENTRYPOINT ["/frps"]
 
-EXPOSE 7000 8090
+#EXPOSE 7000 8090
  
-CMD ["/frps","-c","frps.ini"]
+#CMD ["/frps","-c","frps.ini"]
